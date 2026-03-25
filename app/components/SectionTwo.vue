@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full">
+  <div class="w-full pb-10">
     <div
       class="bg-neutral-500 flex flex-row flex-wrap justify-around h-20 items-center w-full"
     >
@@ -16,9 +16,41 @@
       class="w-full"
       :ui="{
         title: 'w-full',
-        container: 'flex! flex-col!',
+        container: 'flex! flex-col! py-10! h-fit! gap-0! ',
+        root: 'h-fit!',
       }"
     />
+    <div
+      class="grid grid-cols-1 lg:w-[60%] lg:grid-cols-3 lg:mx-auto gap-6 mx-6"
+    >
+      <div class="w-full col-span-2">
+        <UPageCard
+          title="Grundlig Grundundersökning"
+          description="Vi gissar aldrig. Varje projekt inleds med en teknisk analys av markförhållanden och befinrlig kontruktion för att säkerställa rätt metodval"
+          icon="material-symbols:house-outline"
+          variant="soft"
+        >
+          <div class="h-[50%]">
+            <img src="/hero-image.png" />
+          </div>
+        </UPageCard>
+      </div>
+      <div class="flex flex-col gap-6 h-full w-full">
+        <UPageCard
+          title="Totalentreprenad"
+          description="Vi sköter allt från grävning och isolering till återställning av din tomt. En kontaktperson hela vägen."
+          icon="clarity:contract-line"
+          class="h-full w-full"
+          variant="soft"
+        /><UPageCard
+          title="Modern Maskinpark"
+          description="Vi använder kompakta, skonsamma maskiner som minimerar påverkan på din trädgård och omgivning."
+          icon="streamline-ultimate:factory-industrial-robot-arm-1"
+          class="h-full w-full"
+          variant="soft"
+        />
+      </div>
+    </div>
   </div>
 </template>
 

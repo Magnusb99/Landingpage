@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @import 'tailwindcss';
 @import '@nuxt/ui';
 
@@ -84,7 +85,9 @@
 	--color-slateNeutral-700: #737373;
 	--color-slateNeutral-800: #454545;
 	--color-slateNeutral-900: #222222;
-	--color-slateNeutral-950: #121212;}
+	--color-slateNeutral-950: #121212;
+
+}
 
 :root {
 	--ui-primary: var(--ui-color-primary-500);
@@ -112,6 +115,9 @@
 	--ui-border-muted: var(--ui-color-neutral-300);
 	--ui-border-accented: var(--ui-color-primary-600);
 	--ui-border-inverted: var(--ui-color-neutral-800);
+        --font-sans: 'Inter', sans-serif;        /* body */
+  --font-display: 'Space Grotesk', sans-serif;  /* headings */
+  --font-mono: 'Work Sans', monospace;     /* labels */
 }
 
 .dark {
@@ -139,4 +145,58 @@
 	--ui-border-muted: var(--ui-color-neutral-300);
 	--ui-border-accented: var(--ui-color-primary-600);
 	--ui-border-inverted: var(--ui-color-neutral-800);
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Body → Inter (sätts redan via --ui-font-sans) */
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Labels */
+label {
+  font-family: 'Work Sans', sans-serif;
+}
+
+.heroBtns button {
+    
+  [data-slot="leadingIcon"] {
+    color: var(--color-primary-600);
+
+  }
+
+  [data-slot="label"] {
+    color: black;
+  }
+  &:hover {
+     opacity: 100%;
+     cursor: default;
+    }
+}
+.gradient-btn {
+  position: relative;
+  background: linear-gradient(135deg, var(--color-primary-600), var(--color-primary-400));
+  
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, var(--color-primary-400), var(--color-primary-400));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;  /* ← under texten */
+  }
+  
+  &:hover::after {
+    opacity: 1;
+
+  }
+  
+  /* Allt innehåll ovanpå */
+  & > * {
+    position: relative;
+    z-index: 1;
+  }
 }

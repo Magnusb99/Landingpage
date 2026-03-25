@@ -1,5 +1,11 @@
 <template>
-  <UHeader title="ByggProffs Skåne" class="border-none flex flex-wrap flex-row">
+  <UHeader
+    title="ByggProffs Skåne"
+    class="border-none flex flex-wrap flex-row"
+    :ui="{
+      title: 'font-semibold text-3xl',
+    }"
+  >
     <template #right>
       <UButton leading-icon="gg:phone" label="Ring oss nu" variant="link" />
       <UButton label="Boka Hembesök" />

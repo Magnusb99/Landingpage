@@ -13,6 +13,7 @@ export default defineAppConfig({
     button: {
       slots: {
         base: 'rounded-none hover:cursor-pointer',
+        label: 'font-mono',
       }
     },
     input: {
@@ -26,6 +27,11 @@ export default defineAppConfig({
             container: 'flex flex-wrap justify-center ',
             toggle: 'hidden',
     }
-}
+},
+pageCard: {
+    slots: {
+            root: 'rounded-lg border border-neutral-200 bg-neutral-50',
+     
 	}
+}}
 })

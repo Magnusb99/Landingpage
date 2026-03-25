@@ -1,8 +1,9 @@
 <template>
-  <div>
+  <div class="w-full bg-neutral-50">
     <AppHeader />
     <AppHero />
     <SectionTwo />
+    <SectionThree />
   </div>
 </template>
 
