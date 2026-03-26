@@ -47,7 +47,7 @@
           </div>
 
           <a
-            href="https://calendar.app.google/dUdoD3Q2MPEide2z6"
+            href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ008z0cl51NZoJBTojWcHWWi5JGx5EN64GAOKkgkDUKIo1GwNof9pBynL9_ulHBS2MSvPuLP24F?gv=true"
             target="_blank"
             rel="noopener noreferrer"
             class="mt-2 inline-flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold text-sm px-6 py-3 transition-colors"
@@ -62,7 +62,7 @@
         <!-- Calendar embed -->
         <div class="flex-1 w-full min-h-[600px] border border-neutral-200 shadow-sm overflow-hidden">
           <iframe
-            src="https://calendar.app.google/dUdoD3Q2MPEide2z6"
+            src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ008z0cl51NZoJBTojWcHWWi5JGx5EN64GAOKkgkDUKIo1GwNof9pBynL9_ulHBS2MSvPuLP24F?gv=true"
             width="100%"
             height="600"
             frameborder="0"
