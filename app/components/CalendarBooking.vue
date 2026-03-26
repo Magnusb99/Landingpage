@@ -18,7 +18,7 @@
             </div>
             <div>
               <p class="font-semibold text-sm">30 minuter</p>
-              <p class="text-neutral-500 text-sm">Kostnadsfritt rådgivningsmöte</p>
+              <p class="text-neutral-700 text-sm">Kostnadsfritt rådgivningsmöte</p>
             </div>
           </div>
 
@@ -30,7 +30,7 @@
             </div>
             <div>
               <p class="font-semibold text-sm">Telefon</p>
-              <p class="text-neutral-500 text-sm">Vi ringer upp dig vid bokad tid</p>
+              <p class="text-neutral-700 text-sm">Vi ringer upp dig vid bokad tid</p>
             </div>
           </div>
 
@@ -42,7 +42,7 @@
             </div>
             <div>
               <p class="font-semibold text-sm">Ingen bindning</p>
-              <p class="text-neutral-500 text-sm">Avboka eller omboka enkelt</p>
+              <p class="text-neutral-700 text-sm">Avboka eller omboka enkelt</p>
             </div>
           </div>
 
