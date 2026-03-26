@@ -82,8 +82,8 @@
               <input
                 v-model.number="inputParams.depth"
                 type="number"
-                min="0.5"
-                max="5"
+                min="0.1"
+                max="4"
                 step="0.1"
                 placeholder="t.ex. 2.2"
                 class="w-full border border-neutral-200 rounded px-3 py-1.5 text-sm focus:outline-none focus:border-slateSecondary-500"

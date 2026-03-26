@@ -59,7 +59,7 @@ export const CONSTANTS = {
   FINPLANERING_FACTOR:   2.5,  // m² per löpmeter (arbetsyta runt schaktet)
   BARLAGER_TON_PER_M2:   0.32, // ton bärlager per m² finplanering
 
-  // Standardantal – justeras per projekt vid behov
+  // Standardantal – justeras per projekt vid behov. ARRAY för Framkörning??
   DEFAULT_FRAMKORNING:          10,
   DEFAULT_INSPEKTIONSROR:        2,
   DEFAULT_BOJAR:                 4,
