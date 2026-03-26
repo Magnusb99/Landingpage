@@ -4,6 +4,7 @@
     <AppHero />
     <SectionTwo />
     <SectionTestimonials />
+    <CalendarBooking />
     <SectionThree />
   </div>
 </template>
