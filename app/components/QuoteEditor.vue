@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col h-full">
+  <div class="flex flex-col h-full w-[90%] mx-auto">
 
     <!-- ── Rubrik + status ────────────────────────────────────────────────── -->
     <div class="flex items-center justify-between px-5 py-3 border-b border-neutral-200 bg-white shrink-0">
