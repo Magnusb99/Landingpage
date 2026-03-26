@@ -1,13 +1,12 @@
 <template>
   <div class="w-full bg-neutral-50">
     <AppHeader />
-    <CalcComponent />
+    <DrainageCalculator />
   </div>
 </template>
 
-<script setup lang="ts">
-import CalcComponent from '~/components/CalcComponent.vue';
-
+<script setup>
+import DrainageCalculator from '~/components/DrainageCalculator.vue'
 </script>
 
 <style scoped></style>

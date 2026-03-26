@@ -5,7 +5,7 @@
       <h1 class="text-lg font-bold text-neutral-800">Offertverktyg — Byggproffs Skåne</h1>
       <div class="flex gap-2">
         <button
-          class="text-sm border border-neutral-300 rounded px-3 py-1.5 hover:bg-neutral-50 flex items-center gap-1.5"
+          class="text-sm border border-neutral-600 rounded px-3 py-1.5 hover:bg-neutral-50 flex items-center gap-1.5"
           @click="printProposal"
         >
           🖨️ Skriv ut offert
@@ -21,32 +21,32 @@
 
         <!-- Project Info -->
         <div class="bg-white rounded-lg border border-neutral-200 p-4">
-          <h2 class="text-xs font-semibold text-neutral-400 uppercase tracking-wide mb-3">Projektinformation</h2>
+          <h2 class="text-xs font-semibold text-neutral-800 uppercase tracking-wide mb-3">Projektinformation</h2>
           <div class="space-y-2">
             <div>
-              <label class="text-xs text-neutral-500 block mb-0.5">Kundens namn</label>
+              <label class="text-xs text-neutral-700 block mb-0.5">Kundens namn</label>
               <input v-model="project.customerName" placeholder="För- och efternamn" class="w-full border border-neutral-200 rounded px-2 py-1.5 text-sm focus:outline-none focus:border-blue-400" />
             </div>
             <div>
-              <label class="text-xs text-neutral-500 block mb-0.5">Kundens adress</label>
+              <label class="text-xs text-neutral-700 block mb-0.5">Kundens adress</label>
               <input v-model="project.customerAddress" placeholder="Gatuadress, postnummer, ort" class="w-full border border-neutral-200 rounded px-2 py-1.5 text-sm focus:outline-none focus:border-blue-400" />
             </div>
             <div>
-              <label class="text-xs text-neutral-500 block mb-0.5">Arbetsadress (om annan)</label>
+              <label class="text-xs text-neutral-700 block mb-0.5">Arbetsadress (om annan)</label>
               <input v-model="project.projectAddress" placeholder="Projektets adress" class="w-full border border-neutral-200 rounded px-2 py-1.5 text-sm focus:outline-none focus:border-blue-400" />
             </div>
             <div class="grid grid-cols-2 gap-2">
               <div>
-                <label class="text-xs text-neutral-500 block mb-0.5">Offertdatum</label>
+                <label class="text-xs text-neutral-700 block mb-0.5">Offertdatum</label>
                 <input v-model="project.date" type="date" class="w-full border border-neutral-200 rounded px-2 py-1.5 text-sm focus:outline-none focus:border-blue-400" />
               </div>
               <div>
-                <label class="text-xs text-neutral-500 block mb-0.5">Giltig till</label>
+                <label class="text-xs text-neutral-700 block mb-0.5">Giltig till</label>
                 <input v-model="project.validUntil" type="date" class="w-full border border-neutral-200 rounded px-2 py-1.5 text-sm focus:outline-none focus:border-blue-400" />
               </div>
             </div>
             <div>
-              <label class="text-xs text-neutral-500 block mb-0.5">Vår referens</label>
+              <label class="text-xs text-neutral-700 block mb-0.5">Vår referens</label>
               <input v-model="project.ourRef" class="w-full border border-neutral-200 rounded px-2 py-1.5 text-sm focus:outline-none focus:border-blue-400" />
             </div>
           </div>
@@ -54,14 +54,14 @@
 
         <!-- ROT + Labor settings -->
         <div class="bg-white rounded-lg border border-neutral-200 p-4">
-          <h2 class="text-xs font-semibold text-neutral-400 uppercase tracking-wide mb-3">Beräkningsinställningar</h2>
+          <h2 class="text-xs font-semibold text-neutral-700 uppercase tracking-wide mb-3">Beräkningsinställningar</h2>
           <div class="space-y-3">
             <label class="flex items-center gap-2 cursor-pointer">
               <input type="checkbox" v-model="includeROT" class="rounded" />
               <span class="text-sm">Inkludera ROT-avdrag (30%)</span>
             </label>
             <div v-if="includeROT">
-              <label class="text-xs text-neutral-500 block mb-0.5">Andel ROT-berättigat arbete (%)</label>
+              <label class="text-xs text-neutral-700 block mb-0.5">Andel ROT-berättigat arbete (%)</label>
               <div class="flex items-center gap-2">
                 <input type="range" v-model.number="laborRatioPct" min="0" max="100" step="1" class="flex-1" />
                 <span class="text-sm font-medium w-10 text-right">{{ laborRatioPct }}%</span>
@@ -82,7 +82,7 @@
             <span class="text-sm font-medium flex-1">{{ section.id }}. {{ section.name }}</span>
             <span
               class="text-xs font-semibold tabular-nums"
-              :class="section.enabled ? 'text-neutral-700' : 'text-neutral-300'"
+              :class="section.enabled ? 'text-neutral-700' : 'text-neutral-600'"
             >
               {{ formatCurrency(sectionTotal(section)) }} kr
             </span>
@@ -126,7 +126,7 @@
               <span class="tabular-nums">{{ formatCurrency(totalInclVat) }} kr</span>
             </div>
             <template v-if="includeROT">
-              <div class="flex justify-between text-neutral-500 text-xs">
+              <div class="flex justify-between text-neutral-700 text-xs">
                 <span>ROT-berättigat arbete</span>
                 <span class="tabular-nums">{{ formatCurrency(rotEligible) }} kr</span>
               </div>
@@ -145,7 +145,7 @@
       </div><!-- end left panel -->
 
       <!-- ─── RIGHT: Proposal Preview ───────────────────────────────────── -->
-      <div class="flex-1 overflow-y-auto bg-neutral-300 p-8">
+      <div class="flex-1 overflow-y-auto bg-neutral-600 p-8">
         <div
           id="proposal-document"
           class="bg-white shadow-2xl max-w-[820px] mx-auto print:shadow-none print:max-w-full"
@@ -157,21 +157,21 @@
               <div class="text-3xl font-bold text-neutral-800 tracking-tight">Byggproffs Skåne</div>
               <div
                 contenteditable="true"
-                class="text-sm text-neutral-400 mt-1 outline-none border-b border-transparent hover:border-blue-200 focus:border-blue-400 transition-colors min-w-[200px]"
+                class="text-sm text-neutral-600 mt-1 outline-none border-b border-transparent hover:border-blue-200 focus:border-blue-400 transition-colors min-w-[200px]"
                 @blur="e => project.companyTagline = (e.target as HTMLElement).innerText"
               >{{ project.companyTagline }}</div>
             </div>
             <div class="text-right">
-              <div class="text-4xl font-extralight text-neutral-300 uppercase tracking-widest">Offert</div>
-              <div class="text-sm text-neutral-500 mt-2">
+              <div class="text-4xl font-extralight text-neutral-600 uppercase tracking-widest">Offert</div>
+              <div class="text-sm text-neutral-700 mt-2">
                 Datum:
                 <span class="font-medium text-neutral-700">{{ formatDate(project.date) }}</span>
               </div>
-              <div v-if="project.validUntil" class="text-sm text-neutral-500">
+              <div v-if="project.validUntil" class="text-sm text-neutral-700">
                 Giltig till:
                 <span class="font-medium text-neutral-700">{{ formatDate(project.validUntil) }}</span>
               </div>
-              <div class="text-sm text-neutral-500 mt-1">
+              <div class="text-sm text-neutral-700 mt-1">
                 Vår ref:
                 <span
                   contenteditable="true"
@@ -185,23 +185,23 @@
           <!-- Customer / Project info grid -->
           <div class="grid grid-cols-2 gap-6 mb-8 p-5 bg-neutral-50 rounded-lg border border-neutral-100">
             <div>
-              <p class="text-xs font-semibold text-neutral-400 uppercase tracking-wide mb-2">Kund</p>
+              <p class="text-xs font-semibold text-neutral-600 uppercase tracking-wide mb-2">Kund</p>
               <div
                 contenteditable="true"
-                class="text-sm text-neutral-700 leading-relaxed outline-none min-h-[48px] border-b border-transparent hover:border-blue-200 focus:border-blue-400 transition-colors"
+                class="text-sm text-neutral-700 leading-relaxed outline-none min-h-[48px] border-b border-transparent hover:border-blue-200 focus:border-blue-600 transition-colors"
                 @blur="e => project.customerName = (e.target as HTMLElement).innerText"
               >{{ project.customerName || 'Kundens namn' }}</div>
               <div
                 contenteditable="true"
-                class="text-sm text-neutral-500 leading-relaxed outline-none mt-1 border-b border-transparent hover:border-blue-200 focus:border-blue-400 transition-colors"
+                class="text-sm text-neutral-700 leading-relaxed outline-none mt-1 border-b border-transparent hover:border-blue-200 focus:border-blue-600 transition-colors"
                 @blur="e => project.customerAddress = (e.target as HTMLElement).innerText"
               >{{ project.customerAddress || 'Gatuadress, Postnummer Ort' }}</div>
             </div>
             <div>
-              <p class="text-xs font-semibold text-neutral-400 uppercase tracking-wide mb-2">Arbetsadress</p>
+              <p class="text-xs font-semibold text-neutral-600 uppercase tracking-wide mb-2">Arbetsadress</p>
               <div
                 contenteditable="true"
-                class="text-sm text-neutral-700 leading-relaxed outline-none min-h-[48px] border-b border-transparent hover:border-blue-200 focus:border-blue-400 transition-colors"
+                class="text-sm text-neutral-700 leading-relaxed outline-none min-h-[48px] border-b border-transparent hover:border-blue-200 focus:border-blue-600 transition-colors"
                 @blur="e => project.projectAddress = (e.target as HTMLElement).innerText"
               >{{ project.projectAddress || 'Projektets adress' }}</div>
             </div>
@@ -209,11 +209,11 @@
 
           <!-- Intro text (fully editable) -->
           <div class="mb-8">
-            <p class="text-xs font-semibold text-neutral-400 uppercase tracking-wide mb-2">Offertbeskrivning</p>
+            <p class="text-xs font-semibold text-neutral-600 uppercase tracking-wide mb-2">Offertbeskrivning</p>
             <textarea
               v-model="project.introText"
               rows="3"
-              class="w-full text-sm text-neutral-600 leading-relaxed resize-none border-0 outline-none bg-transparent border-b border-transparent hover:border-blue-200 focus:border-blue-400 transition-colors"
+              class="w-full text-sm text-neutral-600 leading-relaxed resize-none border-0 outline-none bg-transparent border-b border-transparent hover:border-blue-200 focus:border-blue-600 transition-colors"
               placeholder="Beskrivning av projektet och uppdraget..."
             />
           </div>
@@ -223,7 +223,7 @@
             <!-- Section heading (editable) -->
             <div class="flex items-center gap-2 mb-0">
               <div class="flex-1 bg-neutral-800 text-white px-4 py-2 rounded-t text-sm font-semibold">
-                <span class="text-neutral-400 mr-2">{{ section.id }}.</span>
+                <span class="text-neutral-600 mr-2">{{ section.id }}.</span>
                 <span
                   contenteditable="true"
                   class="outline-none border-b border-transparent hover:border-white/30 focus:border-white transition-colors"
@@ -233,7 +233,7 @@
             </div>
             <table class="w-full text-sm border border-neutral-200 border-t-0">
               <thead>
-                <tr class="bg-neutral-50 text-xs text-neutral-500 border-b border-neutral-200">
+                <tr class="bg-neutral-50 text-xs text-neutral-700 border-b border-neutral-200">
                   <th class="text-left px-3 py-2 font-medium">Aktivitet</th>
                   <th class="text-right px-3 py-2 font-medium w-16">Mängd</th>
                   <th class="text-center px-2 py-2 font-medium w-12">Enhet</th>
@@ -250,17 +250,17 @@
                   <td class="px-3 py-2">
                     <span
                       contenteditable="true"
-                      class="outline-none border-b border-transparent hover:border-blue-200 focus:border-blue-400 transition-colors"
+                      class="outline-none border-b border-transparent hover:border-blue-200 focus:border-blue-600 transition-colors"
                       @blur="e => item.description = (e.target as HTMLElement).innerText"
                     >{{ item.description }}</span>
                   </td>
                   <td class="px-3 py-2 text-right tabular-nums">{{ item.qty }}</td>
-                  <td class="px-2 py-2 text-center text-neutral-400 text-xs">{{ item.unit }}</td>
-                  <td class="px-3 py-2 text-right tabular-nums text-neutral-500">{{ formatCurrency(item.unitPrice) }}</td>
+                  <td class="px-2 py-2 text-center text-neutral-600 text-xs">{{ item.unit }}</td>
+                  <td class="px-3 py-2 text-right tabular-nums text-neutral-700">{{ formatCurrency(item.unitPrice) }}</td>
                   <td class="px-3 py-2 text-right tabular-nums font-medium">{{ formatCurrency(item.qty * item.unitPrice) }}</td>
                 </tr>
                 <tr v-if="section.items.filter(i => i.qty > 0).length === 0">
-                  <td colspan="5" class="px-3 py-2 text-xs text-neutral-400 italic">Inga poster med angiven mängd</td>
+                  <td colspan="5" class="px-3 py-2 text-xs text-neutral-600 italic">Inga poster med angiven mängd</td>
                 </tr>
               </tbody>
               <tfoot>
@@ -277,19 +277,19 @@
             <div class="w-72">
               <div class="space-y-2">
                 <div class="flex justify-between text-sm">
-                  <span class="text-neutral-600">Summa exkl. moms</span>
+                  <span class="text-neutral-600">Totalsumma exkl. moms</span>
                   <span class="font-medium tabular-nums">{{ formatCurrency(grandTotal) }} kr</span>
                 </div>
                 <div class="flex justify-between text-sm">
                   <span class="text-neutral-600">Moms 25%</span>
                   <span class="font-medium tabular-nums">{{ formatCurrency(vat) }} kr</span>
                 </div>
-                <div class="flex justify-between text-base font-bold border-t border-neutral-300 pt-2 mt-1">
+                <div class="flex justify-between text-base font-semibold border-t border-neutral-600 pt-2 mt-1">
                   <span>Summa inkl. moms</span>
                   <span class="tabular-nums">{{ formatCurrency(totalInclVat) }} kr</span>
                 </div>
                 <template v-if="includeROT">
-                  <div class="flex justify-between text-sm text-neutral-500 pt-2">
+                  <div class="flex justify-between text-sm text-neutral-700 pt-2">
                     <span>Varav ROT-berättigat arbete</span>
                     <span class="tabular-nums">{{ formatCurrency(rotEligible) }} kr</span>
                   </div>
@@ -301,7 +301,7 @@
                     <span>Summa att betala</span>
                     <span class="tabular-nums">{{ formatCurrency(finalAmount) }} kr</span>
                   </div>
-                  <p class="text-xs text-neutral-400 mt-1">
+                  <p class="text-xs text-neutral-600 mt-1">
                     *ROT-avdrag ansöks av Byggproffs Skåne och dras direkt från fakturabeloppet.
                   </p>
                 </template>
@@ -311,7 +311,7 @@
 
           <!-- Terms / Notes (editable) -->
           <div class="mt-10 pt-6 border-t border-neutral-200">
-            <p class="text-xs font-semibold text-neutral-400 uppercase tracking-wide mb-2">Villkor och noteringar</p>
+            <p class="text-xs font-semibold text-neutral-600 uppercase tracking-wide mb-2">Villkor och noteringar</p>
             <textarea
               v-model="project.notes"
               rows="5"
@@ -322,17 +322,17 @@
           <!-- Signature area -->
           <div class="mt-10 grid grid-cols-2 gap-10">
             <div>
-              <div class="border-b-2 border-neutral-300 h-14 mb-2"></div>
-              <p class="text-xs text-neutral-400">Datum och underskrift — Byggproffs Skåne</p>
+              <div class="border-b-2 border-neutral-600 h-14 mb-2"></div>
+              <p class="text-xs text-neutral-600">Datum och underskrift — Byggproffs Skåne</p>
             </div>
             <div>
-              <div class="border-b-2 border-neutral-300 h-14 mb-2"></div>
-              <p class="text-xs text-neutral-400">Datum och underskrift — Kund</p>
+              <div class="border-b-2 border-neutral-600 h-14 mb-2"></div>
+              <p class="text-xs text-neutral-600">Datum och underskrift — Kund</p>
             </div>
           </div>
 
           <!-- Footer -->
-          <div class="mt-10 pt-4 border-t border-neutral-100 text-xs text-neutral-300 flex justify-between">
+          <div class="mt-10 pt-4 border-t border-neutral-100 text-xs text-neutral-600 flex justify-between">
             <span>Byggproffs Skåne AB</span>
             <span>Offert genererad {{ formatDate(project.date) }}</span>
           </div>
@@ -357,11 +357,11 @@ const project = reactive({
   projectAddress: '',
   date: today,
   validUntil: thirtyDays,
-  ourRef: 'Byggproffs Skåne',
+  ourRef: 'Aleks Nedeljkovic Byggproffs Skåne',
   companyTagline: 'Professionella byggtjänster i Skåne',
   introText: 'Vi tackar för förfrågan och lämnar härmed följande offert på begärda arbeten. Priset inkluderar allt material, maskinhyra och arbetskostnad enligt specifikationen nedan.',
   notes: `• Offerten gäller i 30 dagar från offertdatum.
-• Betalningsvillkor: 30 dagar netto efter fakturadatum.
+• Betalningsvillkor: 40% Förskott, 60% 30 dagar netto efter fakturadatum.
 • Eventuella tilläggsarbeten faktureras separat efter skriftligt godkännande.
 • Byggproffs Skåne innehar F-skattsedel och är anslutna till kollektivavtal.
 • Vid ROT-avdrag krävs att beställaren är folkbokförd på fastigheten.`,
